@@ -8,15 +8,13 @@ function App() {
   const [bgColor, setBgColor] = useState("ffffff");
   const [qrCode, setQrCode] = useState("");
 
-  // Changing the URL only when the user
-  // changes the input
+  
   useEffect(() => {
     setQrCode
  (`http://api.qrserver.com/v1/create-qr-code/?data=${word}!&size=${size}x${size}&bgcolor=${bgColor}`);
   }, [word, size, bgColor]);
 
-  // Updating the input word when user
-  // click on the generate button
+
   function handleClick() {
     setWord(temp);
   }
